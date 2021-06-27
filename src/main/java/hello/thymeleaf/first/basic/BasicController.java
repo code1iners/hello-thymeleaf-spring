@@ -98,12 +98,21 @@ public class BasicController {
     }
 
     /**
-     * [005] Url link.
+     * [005] url link.
      */
     @GetMapping(value = "link")
     public String link(Model model) {
         model.addAttribute("param1", "data1");
         model.addAttribute("param2", "data2");
         return "basic/link";
+    }
+
+    /**
+     * [006] literal
+     */
+    @GetMapping(value = "literal")
+    public String literal(Model model) {
+        model.addAttribute("data", "Spring!");
+        return "basic/literal";
     }
 }
