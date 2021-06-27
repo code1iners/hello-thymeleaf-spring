@@ -125,4 +125,12 @@ public class BasicController {
         model.addAttribute("data", "Spring!");
         return "basic/operation";
     }
+
+    /**
+     * [008] attribute.
+     */
+    @GetMapping(value = "attribute")
+    public String attribute() {
+        return "basic/attribute";
+    }
 }
