@@ -108,11 +108,21 @@ public class BasicController {
     }
 
     /**
-     * [006] literal
+     * [006] literal.
      */
     @GetMapping(value = "literal")
     public String literal(Model model) {
         model.addAttribute("data", "Spring!");
         return "basic/literal";
+    }
+
+    /**
+     * [007] operation.
+     */
+    @GetMapping(value = "operation")
+    public String operation(Model model) {
+        model.addAttribute("nullData", null);
+        model.addAttribute("data", "Spring!");
+        return "basic/operation";
     }
 }
