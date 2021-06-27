@@ -89,11 +89,21 @@ public class BasicController {
     }
 
     /**
-     * utility (date).
+     * [004] utility (date).
      */
     @GetMapping(value = "/date")
     public String date(Model model) {
         model.addAttribute("localDateTime", LocalDateTime.now());
         return "basic/date";
+    }
+
+    /**
+     * [005] Url link.
+     */
+    @GetMapping(value = "link")
+    public String link(Model model) {
+        model.addAttribute("param1", "data1");
+        model.addAttribute("param2", "data2");
+        return "basic/link";
     }
 }
