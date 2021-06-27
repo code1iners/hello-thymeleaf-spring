@@ -1,5 +1,6 @@
 package hello.thymeleaf.first.basic;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -60,6 +61,17 @@ public class BasicController {
         return "basic/variable";
     }
 
+    @Data
+    static class User {
+        private String username;
+        private int age;
+
+        public User(String username, int age) {
+            this.username = username;
+            this.age = age;
+        }
+    }
+
     /**
      * [003] objects.
      */
@@ -76,14 +88,12 @@ public class BasicController {
         }
     }
 
-    @Data
-    static class User {
-        private String username;
-        private int age;
-
-        public User(String username, int age) {
-            this.username = username;
-            this.age = age;
-        }
+    /**
+     * utility (date).
+     */
+    @GetMapping(value = "/date")
+    public String date(Model model) {
+        model.addAttribute("localDateTime", LocalDateTime.now());
+        return "basic/date";
     }
 }
